@@ -1,4 +1,44 @@
 @startuml
+class Entry{
+    String name;
+    Date createdDate;
+    String createdBy;
+    Date updateDate;
+    String updatedBy;
+    Map<UserType, List<Access>> access;
+    String fullPath;
+    String pathName;
+    EntryType entryType;
+    Boolean isFile();
+}
 
+class File extends Entry{
+    String content;
+}
 
+class Directory extends Entry{
+    Map<String,Entry> map;
+}
+
+enum EntryType{
+    File,
+    Directory;
+}
+
+enum Access{
+    Read,
+    Write,
+    Execute
+}
+
+enum UserType{
+    User,
+    Group,
+    Other
+}
+
+/'Singleton'/
+class FileSystem{
+    Map<String, Entry> entries;
+}
 @enduml

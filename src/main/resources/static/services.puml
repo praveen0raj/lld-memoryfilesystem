@@ -1,0 +1,9 @@
+@startuml
+interface FileSystemService{
+    File addContentToFile(String path, String content);
+    String readContentFromFile(String path);
+    void mkdir(String path);
+    List<String> ls(String path);
+    Boolean cd(String path);
+}
+@enduml
