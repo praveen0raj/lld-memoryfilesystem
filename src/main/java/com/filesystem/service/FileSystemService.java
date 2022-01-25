@@ -7,4 +7,6 @@ public interface FileSystemService {
     String readContentFromFile(String path);
     void mkdir(String path);
     List<String> ls(String path);
+    int countNumberOfFiles(String path);
+    void delete(String path);
 }
